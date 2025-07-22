@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$enable-negative-margins: true;
+
+$primary: #F6F9FF;          // this is for some div's background 
+$secondary: #04684c;        // this is for company's list background 
+$secondary-dark: #006022;   // this is for footer's social media icons background c
+$secondary-light: #2D907A;  // this is for service page 3rd card background 
+$warning: #E2FF54;          // this is for one word in hero heading 100% dedication card
+$success: #00B512;          // this is for button with right arrow
+$info: #F1FFD2;             // this is for expenses tracker background 
+$light: #FFFFFF;            // this is for overall background 
+$dark: #000000;             // this is for some heading 
+
+$custom-theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "secondary-dark": $secondary-dark,
+    "secondary-light": $secondary-light,
+    "warning": $warning,
+    "success": $success,
+    "info": $info,
+    "light": $light,
+    "dark": $dark,
+);
+
+$grid-breakpoints: (
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+$container-max-widths: (
+    xl: 1000px,
+    xxl: 1140px,
+);
+
+$font-size-base: 1rem;
+
+$h1-font-size: 4rem; //?  64px 
+$h2-font-size: 3rem; //?  48px
+$h3-font-size: 2.25rem; //?  36px
+$h4-font-size: 2rem; //?  32px
+$h5-font-size: 1.5rem; //?  24px
+$h6-font-size: 1.25rem; //?  20px
+$h7-font-size: 1.125rem; //?  18px
+$h8-font-size: $font-size-base; //?  16px
+$h9-font-size: 0.875rem; //?  14px
+
+$custom-font-size: (
+    7: $h7-font-size,
+    9: $h9-font-size
+);
+
+
+$spacer: 1rem;
+$custom-spacers: (
+    0: 0,
+    4: $spacer * 0.25,
+    8: $spacer * 0.5,
+    12: $spacer * 0.75,
+    16: $spacer * 1,
+    20: $spacer * 1.25,
+    24: $spacer * 1.5,
+    28: $spacer * 1.75,
+    32: $spacer * 2,
+    40: $spacer * 2.5,
+    48: $spacer * 3,
+    56: $spacer * 3.5,
+    64: $spacer * 4,
+    72: $spacer * 4.5,
+    80: $spacer * 5,
+    88: $spacer * 5.5,
+    96: $spacer * 6,
+);
+
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/nav";
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$spacers: map-merge($spacers, $custom-spacers);
+$font-sizes: map-merge($font-sizes, $custom-font-size);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+h6, .h7, .h8, .h9 {
+    font-family: "Poppins", sans-serif;
+}
