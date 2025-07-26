@@ -1,40 +1,66 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const alertConfigs = {
+        'about-us-button': {
+            title: '📘 About Us',
+            text: 'Learn more about our mission and values!',
+            icon: 'info'
+        },
+        'featured-button': {
+            title: '⭐ Featured',
+            text: 'Check out our most popular features!',
+            icon: 'success'
+        },
+        'get-started-button': {
+            title: '🚀 Get Started',
+            text: 'Let’s begin your journey with us!',
+            icon: 'question'
+        },
+        'trustworthiness-button': {
+            title: '🔒 Trust & Security',
+            text: 'We prioritize your privacy and safety.',
+            icon: 'warning'
+        },
+        'services-button': {
+            title: '🛠️ Our Services',
+            text: 'Discover all the services we offer.',
+            icon: 'info'
+        },
+        'view-more-button': {
+            title: '👁️ View More',
+            text: 'Explore more of our awesome content.',
+            icon: 'success'
+        },
+        'testimonial-button': {
+            title: '🗣️ Testimonials',
+            text: 'Hear what our customers have to say!',
+            icon: 'info'
+        }
+    };
 
-window.onload = function () {
-    const cards = document.querySelectorAll(".card-item");
-    const image = document.getElementById("chart-image");
+    Object.keys(alertConfigs).forEach(className => {
+        const buttons = document.querySelectorAll(`.${className}`);
+        const config = alertConfigs[className];
 
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            // Remove 'active' class from all cards
-            cards.forEach((c) => c.classList.remove("active"));
-
-            // Add 'active' to clicked one
-            card.classList.add("active");
-
-            // Change image
-            const imageSrc = card.getAttribute("data-image");
-            if (imageSrc) {
-                image.src = imageSrc;
-            }
-        });
-    });
-};
-
-
-
-const buttons = document.querySelectorAll('.button');
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        Swal.fire({
-            title: '🎉 Button Clicked!',
-            text: 'You just clicked a button.',
-            icon: 'success',
-            confirmButtonText: 'Got it!',
-            confirmButtonColor: '#3085d6',
-            background: '#f0f9ff',
-            color: '#333',
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                Swal.fire({
+                    toast: true,
+                    position: 'top',
+                    title: config.title,
+                    text: config.text,
+                    icon: config.icon,
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    background: '#f0f9ff',
+                    color: '#333',
+                    customClass: {
+                        popup: 'shadow-sm rounded'
+                    }
+                });
+            });
         });
     });
 });
+
 
