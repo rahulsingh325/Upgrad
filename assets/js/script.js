@@ -1,3 +1,46 @@
+window.onload = function () {
+    const cards = document.querySelectorAll(".card-item");
+    const image = document.getElementById("chart-image");
+
+    cards.forEach((card) => {
+        card.addEventListener("click", () => {
+
+            cards.forEach((c) => c.classList.remove("active"));
+
+
+            card.classList.add("active");
+
+
+            const imageSrc = card.getAttribute("data-image");
+            if (imageSrc) {
+                image.src = imageSrc;
+            }
+        });
+    });
+};
+
+
+
+// const buttons = document.querySelectorAll('.button');
+
+// buttons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         Swal.fire({
+//             toast: true,
+//             position: 'top',
+//             icon: 'success',
+//             title: 'Button Clicked!',
+//             showConfirmButton: false,
+//             timer: 3000,
+//             timerProgressBar: true,
+//             background: '#f0f9ff',
+//             color: '#333',
+//             customClass: {
+//                 popup: 'shadow-sm rounded'
+//             }
+//         });
+//     });
+// });
 document.addEventListener('DOMContentLoaded', () => {
     const alertConfigs = {
         'about-us-button': {
