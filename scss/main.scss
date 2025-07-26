@@ -1,19 +1,52 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IntegralCF';
+    src: url('../fonts/integralCF/Fontspring-DEMO-integralcf-medium.otf') format('opentype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('../fonts/helveticaneue/HelveticaNeue-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+
+
+$font-family-base: 'Poppins', sans-serif;
+$font-family-heading: 'IntegralCF', sans-serif;
+$font-family-monospace: 'HelveticaNeue', sans-serif;
+
 $enable-negative-margins: true;
 
-$primary: #F6F9FF;          // this is for some div's background 
-$secondary: #04684c;        // this is for company's list background 
-$secondary-dark: #006022;   // this is for footer's social media icons background c
-$secondary-light: #2D907A;  // this is for service page 3rd card background 
-$warning: #E2FF54;          // this is for one word in hero heading 100% dedication card
-$success: #00B512;          // this is for button with right arrow
-$info: #F1FFD2;             // this is for expenses tracker background 
-$light: #FFFFFF;            // this is for overall background 
-$dark: #000000;             // this is for some heading 
+$primary: #F6F9FF; // this is for some div's background 
+$secondary: #04684c; // this is for company's list background 
+$secondary-dark: #006022; // this is for footer's social media icons background c
+$secondary-light: #2D907A; // this is for service page 3rd card background 
+$warning: #E2FF54; // this is for one word in hero heading 100% dedication card
+$success: #00B512; // this is for button with right arrow
+$info: #F1FFD2; // this is for expenses tracker background 
+$cream: #F6F9F8; // this is for hero section background
+$light: #FFFFFF; // this is for CLIENTS SECTION background 
+$dark: #000000; // this is for some heading 
 
 $custom-theme-colors: (
     "primary": $primary,
@@ -23,31 +56,34 @@ $custom-theme-colors: (
     "warning": $warning,
     "success": $success,
     "info": $info,
+    "cream": $cream,
     "light": $light,
     "dark": $dark,
 );
 
-$grid-breakpoints: (
-    xl: 1200px,
-    xxl: 1400px,
-);
+
 
 $container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
     xl: 1000px,
-    xxl: 1140px,
+    // customized
+    xxl: 1140px // customized
 );
 
 $font-size-base: 1rem;
 
-$h1-font-size: 4rem; //?  64px 
-$h2-font-size: 3rem; //?  48px
-$h3-font-size: 2.25rem; //?  36px
-$h4-font-size: 2rem; //?  32px
-$h5-font-size: 1.5rem; //?  24px
-$h6-font-size: 1.25rem; //?  20px
-$h7-font-size: 1.125rem; //?  18px
-$h8-font-size: $font-size-base; //?  16px
-$h9-font-size: 0.875rem; //?  14px
+$h1-font-size: 4rem; // 64px
+$h2-font-size: 3rem; // 48px
+$h3-font-size: 2.25rem; // 36px
+$h4-font-size: 2rem; // 32px
+$h5-font-size: 1.5rem; // 24px
+$h6-font-size: 1.25rem; // 20px
+$h7-font-size: 1.125rem; // 18px
+$h8-font-size: 1rem; // 16px
+$h9-font-size: 0.875rem; // 14px
+
 
 $custom-font-size: (
     7: $h7-font-size,
@@ -66,6 +102,7 @@ $custom-spacers: (
     24: $spacer * 1.5,
     28: $spacer * 1.75,
     32: $spacer * 2,
+    36: $spacer * 2.25,
     40: $spacer * 2.5,
     48: $spacer * 3,
     56: $spacer * 3.5,
@@ -74,13 +111,16 @@ $custom-spacers: (
     80: $spacer * 5,
     88: $spacer * 5.5,
     96: $spacer * 6,
+    115: $spacer * 7,
+    120: $spacer * 7.5,
+    130: $spacer * 8,
+    167: $spacer * 10.5,
 );
 
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/nav";
+
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
 $spacers: map-merge($spacers, $custom-spacers);
@@ -90,6 +130,84 @@ $font-sizes: map-merge($font-sizes, $custom-font-size);
 
 
 
-h6, .h7, .h8, .h9 {
-    font-family: "Poppins", sans-serif;
+@import "./component";
+@import "./hero-section";
+@import "./aboutus";
+@import "./ready-to-start";
+@import "./navbar";
+@import "./clients";
+@import "./featured-section";
+@import "./security";
+@import "./services";
+
+.text-h1 {
+    font-size: $h1-font-size;
+    font-family: $font-family-heading;
+}
+
+.text-h2 {
+    font-size: $h2-font-size;
+    font-family: $font-family-heading;
+}
+
+.text-h3 {
+    font-size: $h3-font-size;
+    font-family: $font-family-monospace;
+}
+
+.text-h4 {
+    font-size: $h4-font-size;
+    font-family: $font-family-monospace;
+}
+
+.text-h5 {
+    font-size: $h5-font-size;
+    font-family: $font-family-monospace;
+}
+
+.text-h6 {
+    font-size: $h6-font-size;
+    font-family: $font-family-base;
+}
+
+.text-h7 {
+    font-size: $h7-font-size;
+    font-family: $font-family-base;
+}
+
+.text-h8 {
+    font-size: $h8-font-size;
+    font-family: $font-family-base;
+}
+
+.text-h9 {
+    font-size: $h9-font-size;
+    font-family: $font-family-base;
+}
+
+
+
+
+
+
+
+
+.trusted-button {
+    display: inline-flex;
+    padding: 6px 16px;
+    background-color: rgba(227, 221, 221, 0.7);;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 9999px;
+    border: none;
+    transition: background 0.3s;
+
+    &:hover {
+        background-color: #1a3a4d;
+    }
+}
+
+.main-button {
+    margin-left: -10px;
 }
