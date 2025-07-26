@@ -195,19 +195,16 @@ $font-sizes: map-merge($font-sizes, $custom-font-size);
 .trusted-button {
     display: inline-flex;
     padding: 6px 16px;
-    background-color: rgba(227, 221, 221, 0.7);;
+    background-color: rgba(221, 215, 215, 0.5);;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
     border-radius: 9999px;
     border: none;
-    transition: background 0.3s;
-
-    &:hover {
-        background-color: #1a3a4d;
-    }
 }
 
 .main-button {
-    margin-left: -10px;
+    margin-top: -3px;
+    max-height: 52px;
+    max-width: 52px;
 }
