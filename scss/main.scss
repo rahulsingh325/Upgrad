@@ -130,15 +130,14 @@ $font-sizes: map-merge($font-sizes, $custom-font-size);
 
 
 
-@import "./component";
+
 @import "./hero-section";
 @import "./aboutus";
 @import "./ready-to-start";
-@import "./navbar";
 @import "./clients";
 @import "./featured-section";
 @import "./security";
-@import "./services";
+
 
 .text-h1 {
     font-size: $h1-font-size;
@@ -195,7 +194,8 @@ $font-sizes: map-merge($font-sizes, $custom-font-size);
 .trusted-button {
     display: inline-flex;
     padding: 6px 16px;
-    background-color: rgba(221, 215, 215, 0.5);;
+    background-color: rgba(221, 215, 215, 0.5);
+    ;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
